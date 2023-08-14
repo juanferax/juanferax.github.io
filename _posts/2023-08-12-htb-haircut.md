@@ -25,7 +25,7 @@ sudo nmap -p- --open -sS --min-rate 5000 -n -Pn -vvv 10.10.10.24 -oG allPorts
 ![nmap-port-scan](assets/img/hack-the-box/haircut/haircut-nmap_port_scan.png)
 _Nmap port scan_
 
-We find open 22 (ssh) and 80 (http) open, so we take a look at the webserver running on port 80 and find nothing really interesting.
+We find ports 22 (ssh) and 80 (http) open, so we first take a look at the webserver running on port 80.
 
 ![webserver](assets/img/hack-the-box/haircut/haircut-webserver.png)
 _Werserver on port 80_
@@ -33,7 +33,7 @@ _Werserver on port 80_
 Wappalyzer web extension show us that the site's programming language is PHP, which is valuable information at the time of doing web enumeration.
 
 ![wappalyzer info](assets/img/hack-the-box/haircut/haircut-wappalyzer.png)
-_Wappalyzer_
+_Wappalyzer info_
 
 We do a web scan using the tool <a href="https://github.com/epi052/feroxbuster" target="_blank">feroxbuster</a> in order to discover directories and files with the extension php on the webserver's root path.
 
